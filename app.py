@@ -28,6 +28,7 @@ def delete():
         os.remove(path_to_file)
     if os.path.isfile('static/plot.png') == True:
         os.remove('static/plot.png')
+        plt.clf()
         return redirect('/')
     else:
         return redirect('/')
@@ -35,8 +36,8 @@ def delete():
     
 @app.route('/', methods=['POST','GET'])
 def upload():
-    csv_File = request.files['csvFile']
-    if os.path.isfile('static/{fname}.png'.format(fname=csv_File.filename)) == True:
+  
+    if os.path.isfile('static/plot.png') == True:
         return redirect('/')
     else:
         try:
@@ -58,7 +59,8 @@ def upload():
             c_label = ["Malign (M)" , "Benign (B)"]
             plt.pie(plot , labels = c_label)
 
-            show = plt.savefig('static/{fname}.png'.format(fname=csv_File.filename))
+            show = plt.savefig('static/plot.png')
+          
 
            
          
