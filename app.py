@@ -1,4 +1,5 @@
 import os
+from re import S
 from flask import Flask, render_template, request, Response, redirect
 import io
 import numpy as np
@@ -34,7 +35,8 @@ def delete():
     
 @app.route('/', methods=['POST','GET'])
 def upload():
-    if os.path.isfile('static/plot.png') == True:
+    csv_File = request.files['csvFile']
+    if os.path.isfile('static/{fname}.png'.format(fname=csv_File.filename)) == True:
         return redirect('/')
     else:
         try:
@@ -55,14 +57,12 @@ def upload():
             plot = np.append(m,b)
             c_label = ["Malign (M)" , "Benign (B)"]
             plt.pie(plot , labels = c_label)
-            show = plt.savefig('static/plot.png')
-            # show = None
-            # plot = []
-            # c_label = []
-            # product_result = None
-            # data = None
-            # m = None
-            # b = None
+
+            show = plt.savefig('static/{fname}.png'.format(fname=csv_File.filename))
+
+           
+         
+
         except PermissionError:
             return redirect('/')
     return redirect('/')
