@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+#section-header {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #faedc6;
+  /* background: linear-gradient(rgba(4, 9, 30, 0.3), rgba(4, 9, 30, 0.2)), #FAEDC6; */
+  /* background-position: center;
+  background-size: cover;
+  position: relative; */
+}
+.fixed-top.scrolled {
+  background: white !important;
+  transition: white 200ms linear;
+}
+.text-box {
+  width: 90%;
+  color: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.text-box h1 {
+  font-size: 30px;
+}
+.text-box p {
+  font-size: 14px;
+}
+.logo {
+  width: 147px;
+  height: 49px;
+}
+.advis {
+  width: 400px;
+  height: 178px;
+}
+.icons {
+  width: 90px;
+  height: 60px;
+  position: relative;
+  top: 100px;
+  padding: 9px 20px;
+  transition: 0.2s;
+}
+.icons:hover {
+  transition: 0.2s;
+  transform: scale(1.1);
+}
+/* Responsive */
+@media (max-width: 700px) {
+  .text-box h1 {
+    font-size: 20px;
+    line-height: 1.5;
+  }
+}
+/* About */
+#section-about {
+  width: 80%;
+  margin: auto;
+  padding-top: 100px;
+  min-height: 100vh;
+}
+#section-about h2 {
+  font-size: 28px;
+  font-weight: 500;
+}
+#section-about h3 {
+  font-size: 24px;
+}
+#section-about p {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+  padding: 10px;
+}
+.cancer-images {
+  width: 235px;
+  height: 235px;
+}
+.cancer-type-text {
+  font-size: 12px;
+}
+.tables {
+  background: #64b1f0;
+  border-radius: 10px;
+  margin-bottom: 5%;
+  padding: 10px 10px;
+  box-sizing: border-box;
+}
+
+/* app */
+#app {
+  width: 100%;
+  min-height: 100vh;
+  margin: auto;
+}
+.images {
+  border: 1px solid black;
+  width: 400px;
+  height: 300px;
+  margin-right: 50px;
+}
+.container h1 {
+  padding-top: 20px;
+  font-size: 36px;
+  font-weight: bold;
+}
+.start-tag {
+  display: inline-block;
+  text-decoration: none;
+  margin-top: 10px;
+  color: #fff;
+  background-color: #0f5156;
+  border: 1px solid #0f5156;
+  border-radius: 30px;
+  padding: 9px 25px;
+  font-size: 14px;
+  font-weight: bold;
+  position: relative;
+  transition: 0.2s;
+}
+.start-tag:hover {
+  border: 1px solid #0f5156;
+  background: #fff;
+  color: #0f5156;
+  transition: 0.2s;
+  transform: scale(1.1);
+}
+
+/* Button */
+#a {
+  padding: 5px 10px;
+}
+
+/* Section Feature */
+#section-feature {
+  padding-top: 100px;
+  min-height: 100vh;
+}
+span {
+  color: #5656a5;
+}
+/* Footer */
+footer {
+  padding-top: 20%;
+}
