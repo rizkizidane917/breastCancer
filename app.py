@@ -46,10 +46,11 @@ def insertData():
         csv_File.save(csv_path)
         dt = pd.read_csv(csv_path)
         data = dt
-        drop_list = ['id','perimeter_mean', 'radius_mean', 'compactness_mean', 'concave points_mean', 'radius_se', 'perimeter_se', 'radius_worst', 'perimeter_worst', 'compactness_worst', 'concavity_worst', 'compactness_se', 'concave points_se', 'texture_worst', 'area_worst']
-        data =  data.drop(drop_list, axis=1)
-
-        file = open("my_random_forest.joblib","rb") 
+        # drop_list = ['id','perimeter_mean', 'radius_mean', 'compactness_mean', 'concave points_mean', 'radius_se', 'perimeter_se', 'radius_worst', 'perimeter_worst', 'compactness_worst', 'concavity_worst', 'compactness_se', 'concave points_se', 'texture_worst', 'area_worst']
+        # drop_list = ['id']
+        data =  data.drop(columns=['id'])
+        
+        file = open("Random_Forest.joblib","rb") 
         model = joblib.load(file)
         product_result = model.predict(data)
         product_result = pd.DataFrame(product_result, columns=['diagnosis'])
@@ -74,6 +75,7 @@ def insertData():
         generate(dt,product_result,totals)
         return redirect('/classification')
     except PermissionError:
+        return redirect('/classification')
         pass
 # GET DATA AND SAVE TO REPORT
 def generate(data, label, total_data):
